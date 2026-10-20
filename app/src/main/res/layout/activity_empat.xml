@@ -14,8 +14,8 @@
         android:padding="20dp">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:contentDescription="Info Icon"
             android:src="@android:drawable/ic_menu_info_details" />
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Aplikasi Praktikum Pemrograman Aplikasi Bergerak (PAB)\nVersi 1.0\nFitur: Navigasi 4 Halaman &amp; Options Menu"
+            android:text="Aplikasi Praktikum Pemrograman Aplikasi Bergerak (PAB)\nVersi 1.0\nFitur: Autentikasi, Navigasi 4 Halaman &amp; Options Menu"
             android:textSize="15sp" />
 
         <Button
@@ -41,6 +41,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="Kembali ke Utama" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Logout / Keluar" />
 
     </LinearLayout>
 

@@ -78,7 +78,20 @@ class TigaActivity : AppCompatActivity() {
                 finish()
                 true
             }
+            R.id.menu_logout -> {
+                performLogout()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun performLogout() {
+        AuthManager.isLoggedIn = false
+        Toast.makeText(this, "Berhasil Logout", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(intent)
+        finish()
     }
 }

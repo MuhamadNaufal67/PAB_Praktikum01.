@@ -23,6 +23,11 @@ class EmpatActivity : AppCompatActivity() {
             finish()
         }
 
+        val btnLogout = findViewById<Button>(R.id.btn_logout)
+        btnLogout.setOnClickListener {
+            performLogout()
+        }
+
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNav.selectedItemId = R.id.nav_info
         bottomNav.setOnItemSelectedListener { item ->
@@ -33,9 +38,7 @@ class EmpatActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_hasil -> {
-                    val intent = Intent(this, DuaActivity::class.java)
-                    intent.putExtra("Data Hasil", "Data Pendaftaran Belum Diisi")
-                    startActivity(intent)
+                    startActivity(Intent(this, DuaActivity::class.java))
                     finish()
                     true
                 }
@@ -63,9 +66,7 @@ class EmpatActivity : AppCompatActivity() {
                 true
             }
             R.id.menu_hasil -> {
-                val intent = Intent(this, DuaActivity::class.java)
-                intent.putExtra("Data Hasil", "Data Pendaftaran Belum Diisi")
-                startActivity(intent)
+                startActivity(Intent(this, DuaActivity::class.java))
                 finish()
                 true
             }
@@ -78,7 +79,20 @@ class EmpatActivity : AppCompatActivity() {
                 Toast.makeText(this, "Anda berada di Info Aplikasi", Toast.LENGTH_SHORT).show()
                 true
             }
+            R.id.menu_logout -> {
+                performLogout()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun performLogout() {
+        AuthManager.isLoggedIn = false
+        Toast.makeText(this, "Berhasil Logout", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(intent)
+        finish()
     }
 }

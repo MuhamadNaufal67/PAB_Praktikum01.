@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PAB_Praktikum01">
 
-        <!-- Login Activity (Halaman Awal / Launcher) -->
+        <!-- Login Activity (Launcher Awal) -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -31,7 +31,7 @@
             android:name=".ResetPasswordActivity"
             android:exported="false" />
 
-        <!-- Activity Main (Form Pendaftaran Utama) -->
+        <!-- Activity Main (Form Pendaftaran) -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
